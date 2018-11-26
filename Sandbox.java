@@ -9,7 +9,7 @@ import java.util.Scanner;
             arr[p]=sc.nextInt();
         }
         for(int p=0; p<5; p++){
-            System.out.print(arr[p]);
+            System.out.println(arr[p]);
         }
     }
 }
