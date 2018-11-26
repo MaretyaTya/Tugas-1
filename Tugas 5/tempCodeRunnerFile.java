@@ -1,0 +1,1 @@
+"Hijau".equals(Lampu)
