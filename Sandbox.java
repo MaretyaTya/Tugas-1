@@ -2,14 +2,19 @@ import java.util.Scanner;
     class Sandbox{
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int[]arr=new int[5];
+        int[][]arr=new int[3][2];
         
-        for(int p:arr){
-            System.out.print("input : ");
-            arr[p]=sc.nextInt();
+        for(int p=0; p<arr.length; p++){
+            for(int q=0; q<arr.length; q++){
+                System.out.print("input : ");
+                arr[p][q]=sc.nextInt();
+            }
         }
-        for(int p=0; p<5; p++){
-            System.out.println(arr[p]);
+        
+        for(int p=0; p<arr.length; p++){
+            for(int q=0; q<arr.length; q++){
+                System.out.println(arr[p][q]+" ");
+            }
         }
     }
 }
