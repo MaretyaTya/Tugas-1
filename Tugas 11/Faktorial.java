@@ -9,10 +9,8 @@ class Faktorial{
     }
     static int hitungFaktorialIteratif (int n) {
         int fakt = 1;
-        System.out.println("Iteratif");
         for (int i = n; n >=1; n--) {
             fakt = fakt * n;
-            System.out.println(fakt);
         }
         return fakt;
     }
