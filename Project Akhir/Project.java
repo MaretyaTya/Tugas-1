@@ -1,6 +1,8 @@
 import java.util.Scanner;
 class Project{
-        Scanner scInt=new Scanner(System.in);
+        
+        static Scanner sc=new Scanner(System.in);
+        static char ulangi;
 
             public static void TampilkanMenu(){
                 System.out.println("=====================================================================================================");
@@ -13,10 +15,43 @@ class Project{
                 int pilihan=sc.nextInt();
                 System.out.println("=====================================================================================================");
                 System.out.println("=====================================================================================================");
+                System.out.println();
+                System.out.println();
+                if(pilihan == 1){
+                    System.out.println();
+                    System.out.println();
+                    ZakatPenghasilan();
+                    Ulangi();
+                }
+                else if(pilihan == 2){
+                    System.out.println();
+                    System.out.println();
+                    ZakatPerdagangan();
+                    Ulangi();
+                }
+                else if(pilihan == 3){
+                    System.out.println();
+                    System.out.println();
+                    ZakatEmas();
+                    Ulangi();
+                }
+                else if(pilihan == 4){
+                    System.out.println();
+                    System.out.println();
+                    ZakatTabungan();
+                    Ulangi();
+                }
+                else{
+                    System.out.println();
+                    System.out.println();
+                    System.out.println("Pilih nomer yang tertera di Menu!!");
+                    TampilkanMenu();
+                }
             }
             
             public static void ZakatPenghasilan(){
-                System.out.println("===================================   Zakat Penghasilan  ==========================================");
+        
+                System.out.println("===================================   Zakat Penghasilan  ============================================");
                 System.out.print("Masukan Jumlah Penghasilan Per Bulan = ");
                 int penghasilan=sc.nextInt();
                 System.out.print("Tambahan Penghasilan Dalam Sebulan (Bonus,Lembur,dll)= ");
@@ -42,14 +77,12 @@ class Project{
                         System.out.println("Penghasilan Bersih Anda = RP " + total);
                         System.out.println("Saat Penghasilan Bersih anda bernilai 6.500.000 atau lebih dalam sebulan bulan, anda wajib melaksanakan Zakat");
                         System.out.println("Jumlah yang harus anda Zakat kan : " + jumlah_zakat);
-                        System.out.println("Terima kasih telah menggunakan Layanan Kami");
                         System.out.println("=====================================================================================================");
                     }
                     else{
                         System.out.println("=====================================================================================================");
                         System.out.println("Penghasilan Bersih Anda = RP " + total);
                         System.out.println("Anda tidak Wajib Membayar Zakat");
-                        System.out.println("Terima kasih telah menggunakan layanan kami ");
                         System.out.println("=====================================================================================================");
                     }
             }
@@ -79,14 +112,12 @@ class Project{
                         System.out.println("=====================================================================================================");
                         System.out.println("Anda Wajib Membayar Zakat");
                         System.out.println("Jumlah yang harus anda Zakat kan : " + jumlah_zakat);
-                        System.out.println("Terima kasih telah menggunakan Layanan Kami");
                         System.out.println("=====================================================================================================");
                     }
                     else{
                         System.out.println("=====================================================================================================");
                         System.out.println("Total Keuntungan Dagang anda dalam Setahun adalah = RP " + total);
                         System.out.println("Anda tidak Wajib Membayar Zakat");
-                        System.out.println("Terima kasih telah menggunakan layanan kami ");
                         System.out.println("=====================================================================================================");
                     }
 
@@ -112,19 +143,17 @@ class Project{
                         System.out.println("=====================================================================================================");
                         System.out.println("Anda Wajib Membayar Zakat");
                         System.out.println("Jumlah yang harus anda Zakat kan Sebesar : " + jumlah_zakat);
-                        System.out.println("Terima kasih telah menggunakan Layanan Kami");
                         System.out.println("=====================================================================================================");
                     }
                     else{
                         System.out.println("=====================================================================================================");
                         System.out.println("Total Nilai dari Emas anda adalah = RP " + harga_emas);
                         System.out.println("Anda tidak Wajib Membayar Zakat");
-                        System.out.println("Terima kasih telah menggunakan layanan kami ");
                         System.out.println("=====================================================================================================");
                     }
                 
             }   
-                
+            
             public static void ZakatTabungan(){
                     System.out.println("=====================================================================================================");
                     System.out.println("===================================   Zakat Tabungan  ==============================================");
@@ -141,17 +170,26 @@ class Project{
                             System.out.println("=====================================================================================================");
                             System.out.println("Anda Wajib Membayar Zakat");
                             System.out.println("Jumlah yang harus anda Zakat kan : " + jumlah_zakat);
-                            System.out.println("Terima kasih telah menggunakan Layanan Kami");
                             System.out.println("=====================================================================================================");
                         }
                         else{
                             System.out.println("=====================================================================================================");
                             System.out.println("Anda tidak Wajib Membayar Zakat");
-                            System.out.println("Terima kasih telah menggunakan layanan kami ");
                             System.out.println("=====================================================================================================");
                         }
             }
-
+            
+            public static void Ulangi(){
+                System.out.println();
+                System.out.print("Apakah anda ingin Menghitung lagi? (Y/N) : ");
+                ulangi = sc.next().charAt(0);
+                if (ulangi == 'Y'){
+                    TampilkanMenu();
+                }
+            }
             public static void main(String[] args) {
+                TampilkanMenu();
+                System.out.println();
+                System.out.println("Terimakasih telah menggunakan layanan kami :D");
             }
 }
